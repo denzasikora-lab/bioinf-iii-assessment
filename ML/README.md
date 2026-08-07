@@ -1,4 +1,4 @@
-# BIOINF III Assessment
+# BIOINF III Assessment (ML)
 
 **Работа выполняется строго в Jupiter Notebook**
 
