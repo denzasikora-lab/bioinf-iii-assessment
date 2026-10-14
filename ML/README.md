@@ -1,11 +1,17 @@
-# ML: регрессия систолического давления
+# ML: systolic blood-pressure regression
 
-Решение: [blood_pressure_regression.ipynb](blood_pressure_regression.ipynb).
+The [executed notebook](blood_pressure_regression.ipynb) is self-contained and split into 41 cells, including 27 focused code cells. It preserves participant separation, explains all column decisions, analyzes all 21 protocol inputs, compares seven-input and 21-input Ridge with Extra Trees on 25 identical CV folds, and reports quantitative training/test errors by observed pressure range.
 
-Ноутбук содержит аудит NHANES, удаление точных повторов участников, очистку специальных кодов, EDA на обучающей части, сравнение трех моделей по пяти фолдам CV, объяснение Extra Trees, итоговые метрики и анализ ограничений.
+The simplicity rule selects **Ridge (7 inputs)**. On 1,343 reused test participants: **MAE 11.570 mm Hg**, **RMSE 15.736 mm Hg**, **R2 0.404**. The best same-input tree improvement is below 1%, and its corrected paired interval includes zero. Feature-protocol and model-selection choices are internal analyses informed by feedback, not preregistered external validation.
 
-После исправления методики: 6714 уникальных участников с целью; train/test = 5371/1343. Extra Trees выбрана по CV RMSE. На отложенной части MAE = 11,403, RMSE = 15,570 мм рт. ст., R² = 0,416. Подробности повторного использования holdout при аудите отражены в ноутбуке.
+All 194 column decisions are in [feature_audit.csv](results/feature_audit.csv). The other [result tables](results) contain EDA summaries, fold/repeat CV scores, paired intervals, predictions, model interpretation, and error-range tables with counts, bias, MAE, RMSE, and conditional bootstrap intervals.
 
-Зависимости: [requirements.txt](requirements.txt). Данные: [data](data). Команды запуска - в [главном README](../README.md#как-повторить-ml). Ноутбук проверен последовательным выполнением всех семи кодовых ячеек.
+From the repository root after installing [requirements.txt](requirements.txt):
 
-Исходная формулировка задания сохранена в [docs/assignment_ml.md](../docs/assignment_ml.md).
+```bash
+python ML/execute_notebook.py
+```
+
+The runner uses the active Python environment and overwrites the notebook only after successful execution. Interactive instructions are in the [main README](../README.md#reproduce-ml). CSV inputs are local and remain unchanged.
+
+Translated instructions: [assignment_ml.md](../docs/assignment_ml.md).

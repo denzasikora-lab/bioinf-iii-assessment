@@ -1,67 +1,91 @@
-# BIOINF III - решение ML и NGS
+# BIOINF III: ML and NGS assessment solutions
 
-Автор: **Egor Fedosov**. [Профиль Stepik](https://stepik.org/users/1370242994/profile). Дата работы и повторной проверки: 5 сентября 2026 года.
+Author: **Egor Fedosov**. [Stepik profile](https://stepik.org/users/1370242994/profile). Original analysis: 5 September 2026. English revision and reproduction: 14 October 2026.
 
-В репозитории представлены два результата: воспроизводимый Jupyter Notebook с регрессией систолического давления и лабораторный журнал идентификации белковой последовательности в PDF.
+This repository contains a reproducible regression notebook and an English laboratory notebook for protein-sequence identification. The revision makes feature selection auditable, strengthens model comparison, quantifies errors across target ranges, splits the notebook into focused cells, and pairs NGS commands with their actual outputs.
 
-| Часть | Готовый результат | Основной вывод |
+| Part | Deliverable | Main result |
 | --- | --- | --- |
-| ML | [Ноутбук с кодом, графиками и выполненными ячейками](ML/blood_pressure_regression.ipynb) | Extra Trees: MAE 11,40, RMSE 15,57 мм рт. ст.; R² 0,416 |
-| NGS | [Лабораторный журнал PDF](NGS/HBB_sequence_report.pdf) | HBB, бета-цепь гемоглобина; Homo sapiens по аннотации UniProt P68871; 147 аминокислот |
+| ML | [Executed notebook](ML/blood_pressure_regression.ipynb) | Ridge (7 inputs): MAE 11.570, RMSE 15.736 mm Hg, R2 0.404 |
+| NGS | [English PDF laboratory notebook](NGS/HBB_sequence_report.pdf) | HBB / hemoglobin subunit beta, 147 amino acids; exact match to UniProt P68871 |
 
-## ML: прогнозирование систолического давления
+## ML: predicting systolic blood pressure
 
-Цель - `SystolicBloodPressureMmHg` из предоставленного NHANES. Исходные данные и описание переменных сохранены в [ML/data](ML/data). В таблице 8533 строки и 194 столбца. Аудит выявил 167 полных повторов строк; после их удаления остались 8366 уникальных участников, из которых 6714 имеют измеренную цель. Еще 1652 участника без цели не включены в обучение с учителем.
+The supplied [NHANES CSV and metadata](ML/data) have 8,533 rows and 194 columns. Removing 167 exact duplicate rows leaves 8,366 unique participants, including 6,714 with a measured target. Participants with no target are excluded from supervised learning. The unchanged corrected split has 5,371 training and 1,343 test participants. All EDA uses training participants; preprocessing is fitted inside each CV training fold.
 
-Для моделирования выбраны 21 признак: демография, антропометрия, анкета, активность и лабораторные показатели. Идентификатор участника и диастолическое давление исключены из входов. Специальный код 9999 в длительности сидячей активности переведен в пропуск по документации CDC. Точные правила очистки и их обоснование приведены в ноутбуке.
+The 193 non-identifier variables include the target, so there are 192 potential inputs. The [complete column audit](ML/results/feature_audit.csv) records one decision and reason for every original column: one identifier, one target, 21 retained protocol inputs, and 171 excluded inputs. This is a declared screening protocol, not an assertion that excluded variables are irrelevant. It assumes access to specified metabolic laboratory results and excludes the entire blood-pressure examination. The notebook analyzes all 21 retained inputs and compares them with seven demographic/anthropometric inputs.
 
-Тест содержит 1343 участника (20%), обучение - 5371 (80%). EDA проводится на train. Проверки в коде подтверждают отсутствие общих участников между train/test и внутри всех пяти разбиений CV. Импутация, кодирование категорий и масштабирование Ridge обучаются внутри pipeline на соответствующей обучающей части.
+The median baseline, two fixed Ridge protocols, and Extra Trees use the same 25 training-only folds (five folds repeated five times). [Fold-level results](ML/results/cv_fold_scores.csv), [repeat-level results](ML/results/cv_repeat_scores.csv), and [corrected paired comparisons](ML/results/paired_comparisons.csv) are included.
 
-| Модель | Средний RMSE по 5-fold CV, мм рт. ст. | Средний MAE по CV, мм рт. ст. |
+| Candidate | Mean CV RMSE, mm Hg | Mean CV MAE, mm Hg |
 | --- | ---: | ---: |
-| Extra Trees | 15,498 | 11,297 |
-| Ridge | 15,596 | 11,486 |
-| Медианный прогноз | 20,688 | 15,470 |
+| Extra Trees (21 inputs) | 15.460 | 11.262 |
+| Ridge (21 inputs) | 15.600 | 11.491 |
+| Ridge (7 inputs) | 15.726 | 11.567 |
+| Median baseline | 20.682 | 15.469 |
 
-По минимальному среднему CV RMSE выбрана Extra Trees: 300 деревьев, `min_samples_leaf=4`, `max_features=0.8`, `random_state=42`. Разница с Ridge небольшая и сама по себе не доказывает статистически значимое превосходство. На отложенной части MAE = **11,403**, RMSE = **15,570**, R² = **0,416**. В ноутбуке объяснены обучение и предсказание модели, показаны остатки и важности признаков.
+Extra Trees improves mean RMSE over the 21-input Ridge by only **0.898%**. Its approximate 95% corrected paired interval for the RMSE reduction is **[-0.051, 0.331] mm Hg**, including zero. The seven-input Ridge is only **0.81%** worse than the 21-input Ridge. The declared 1% practical margin and corrected-interval rule therefore select **Ridge (7 inputs)**. This trades a small internal CV difference for fewer inputs and a simpler model. The margin is an analysis choice, not a clinical criterion.
 
-При повторной проверке исправлены утечка через дубликаты и обработка PAD680. Эти метрики заменяют первоначальный ошибочный расчет. Отложенная часть повторно использована после методического исправления, поэтому результат обозначен как внутренняя оценка, а не независимая внешняя валидация. Гиперпараметры по исправленному тесту не подбирались. Анализ не учитывает сложный дизайн выборки NHANES и survey weights; его нельзя интерпретировать как оценку для всего населения или клинически проверенный инструмент.
+On the reused internal test split: **MAE 11.570 mm Hg**, **RMSE 15.736 mm Hg**, **R2 0.404**. Errors are quantified rather than assessed from plots alone:
 
-### Как повторить ML
+| Observed pressure, mm Hg | Participants | MAE | RMSE | Bias: predicted - observed |
+| --- | ---: | ---: | ---: | ---: |
+| <100 | 136 | 12.69 | 15.33 | 12.69 |
+| 100 to <120 | 579 | 9.63 | 12.59 | 6.55 |
+| 120 to <140 | 401 | 7.89 | 9.83 | -0.49 |
+| 140 to <160 | 157 | 14.80 | 17.00 | -14.72 |
+| >=160 | 70 | 39.27 | 42.21 | -39.27 |
 
-Проверено с Python 3.13.12. Из корня репозитория:
+At >=160 mm Hg, **70 participants** have a mean error of **-39.27 mm Hg**, and **100.0%** are underpredicted. This bin contributes **37.5%** of total squared error. [Detailed range results](ML/results/test_errors_by_range.csv) include conditional bootstrap intervals and large-error frequencies; [training out-of-fold diagnostics](ML/results/training_errors_by_range.csv) show whether the pattern is already present in training validation predictions.
+
+The test participants were inspected in earlier versions and again for this revision, which was informed by assessment feedback. These are internal results, not independent external validation. No post-test optimization is claimed. The analysis does not incorporate the NHANES survey design or weights and cannot establish population-wide or clinical performance.
+
+## Reproduce ML
+
+Tested with Python 3.14.3. From the repository root:
 
 ```bash
-python3.13 -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r ML/requirements.txt
+python ML/execute_notebook.py
+```
+
+The runner executes all 27 code cells in a fresh kernel using the active Python interpreter and saves outputs to the notebook. CSV results are regenerated in `ML/results`. Data are already included; execution needs no network. The full repeated tree comparison takes longer than a single five-fold run.
+
+For interactive work:
+
+```bash
 python -m ipykernel install --prefix .venv --name bioinf-iii --display-name 'BIOINF III'
 python -m jupyterlab
 ```
 
-Открыть `ML/blood_pressure_regression.ipynb`, выбрать ядро **BIOINF III**, затем **Restart Kernel and Run All Cells**. Все семь кодовых ячеек выполнены при проверке. CSV уже находятся в репозитории; при выполнении ноутбука сеть не требуется. Версии библиотек зафиксированы в [requirements.txt](ML/requirements.txt).
+Open `ML/blood_pressure_regression.ipynb`, select **BIOINF III**, and choose **Restart Kernel and Run All Cells**. Dependencies are pinned in [requirements.txt](ML/requirements.txt).
 
-## NGS: идентификация последовательности
+## NGS: sequence identification
 
-Индивидуальный архив [A114.fasta.gz](NGS/input/A114.fasta.gz) содержит одну белковую FASTA-запись длиной **147 аминокислот**. Ее заголовок указывает `P68871`, `HBB_HUMAN`, `GN=HBB`, `OS=Homo sapiens`, `OX=9606`.
+The individual [A114.fasta.gz](NGS/input/A114.fasta.gz) archive contains a single protein sequence of **147 amino acids**. Its header identifies P68871 / HBB_HUMAN, HBB, Homo sapiens, and Taxonomy ID 9606. Comparing the actual sequence with the pinned [UniProt reference](NGS/reference/P68871.fasta) confirms **147/147 positional matches**, **100% identity**, and **100% length coverage**, with no substitutions or gaps. Organism assignment follows the annotation; a one-reference comparison does not prove species uniqueness.
 
-Аннотация сверена с [UniProtKB P68871](https://www.uniprot.org/uniprotkb/P68871/entry) и [NCBI Gene 3043](https://www.ncbi.nlm.nih.gov/gene/3043). Прямое локальное сравнение с сохраненным эталоном UniProt подтвердило совпадение **147 из 147 позиций**, идентичность 100% и покрытие 100%, без замен и разрывов. Это каноническая бета-цепь гемоглобина HBB. Организм принят по аннотации записи; одно совпадение белка с эталоном само по себе не доказывает уникальность вида происхождения.
+The [English PDF](NGS/HBB_sequence_report.pdf) contains commands, outputs, checksum validation, annotation queries, reasoning, limits, and one short Abstract quotation with DOI [10.1016/j.retram.2025.103513](https://doi.org/10.1016/j.retram.2025.103513). An [editable report source](NGS/HBB_sequence_report.md), [PDF generator](NGS/build_report.py), and [actual command transcript](NGS/reproduction.log) are included. Missing details of the historical server download are identified explicitly.
 
-В [PDF-журнале](NGS/HBB_sequence_report.pdf) зафиксированы получение архива, команды, контрольные суммы, запросы к базам, промежуточные результаты, рассуждения и ограничения. Включена точная цитата из Abstract статьи Almasoudi HH. (2025), DOI [10.1016/j.retram.2025.103513](https://doi.org/10.1016/j.retram.2025.103513), об исследовании HBB-ассоциированных гемоглобинопатий и подходов CRISPR-Cas9.
+## Reproduce NGS
 
-### Как повторить NGS
-
-Нужен Python 3.9 или новее; сторонние библиотеки и сервер не требуются:
+Python 3.9 or newer; no third-party packages are needed for sequence verification:
 
 ```bash
-gzip -t NGS/input/A114.fasta.gz
 python3 NGS/verify_sequence.py
 ```
 
-Ожидаемый результат: `Exact positional matches: 147 / 147`. [Скрипт проверки](NGS/verify_sequence.py) читает локальный архив и [сохраненный эталон](NGS/reference/P68871.fasta), проверяет SHA-256, формат, алфавит, длину и точное совпадение. Повторный запрос индивидуального задания на сервере не нужен.
+Expected: `Exact positional matches: 147 / 147`. For all inspection commands with tracing (Bash, file, gzip, and shasum required):
 
-## Дополнительная подготовка
+```bash
+bash NGS/reproduce.sh > NGS/reproduction.log 2>&1
+```
 
-[Портфолио сертификатов](https://denzasikora-lab.github.io/demo/cert/) содержит дополнительные, в том числе более продвинутые и профильные программы по биоинформатике, ML и AI. Среди представленных - Wellcome Connecting Science по Linux, Bash и R для биологов, Stanford Machine Learning Specialization и Harvard CS50 AI with Python. На странице доступны ссылки для проверки документов.
+The verifier checks both input and reference checksums, format, alphabet, annotation, length, and exact identity. The original task request must not be repeated. See [NGS/README.md](NGS/README.md) for PDF regeneration.
 
-Исходные условия сохранены в [docs](docs), источник задания - [BIOINF-III-assessment](https://github.com/bioinformaticsinstitute/BIOINF-III-assessment).
+## Additional preparation and task provenance
+
+The [certificate portfolio](https://denzasikora-lab.github.io/demo/cert/) contains additional training in bioinformatics, ML, and AI, including Wellcome Connecting Science courses in Linux, Bash, and R for biologists, the Stanford Machine Learning Specialization, and Harvard CS50 AI with Python, with document-verification links.
+
+English translations of the supplied task instructions are in [docs](docs). The original task source is [BIOINF-III-assessment](https://github.com/bioinformaticsinstitute/BIOINF-III-assessment). [Revision notes](docs/revision_notes.md) map the assessment feedback to the changes and validation evidence.

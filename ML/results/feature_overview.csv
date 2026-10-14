@@ -1,0 +1,22 @@
+feature,source,label,decision,reason,encoding,train_missing_pct,train_unique
+GeneralHealthCondition,HSQ,General health condition,retain,One broad self-reported health summary.,categorical,14.857568423012474,5
+SleepHoursWeekdaysOrWorkdays,SLQ,Sleep hours - weekdays or workdays,retain,Habitual sleep duration; avoid clock-time parsing.,numeric,18.35784770061441,24
+WeightKg,BMX,Weight (kg),retain,Absolute measured body size; regularize overlap with BMI.,numeric,1.042636380562279,1143
+StandingHeightCm,BMX,Standing Height (cm),retain,Measured stature; distinct from age and body mass.,numeric,1.0612548873580339,669
+BodyMassIndexKgm2,BMX,Body Mass Index (kg/m**2),retain,Measured size relative to height; correlated with weight and height.,numeric,1.1915844349283187,418
+WaistCircumferenceCm,BMX,Waist Circumference (cm),retain,Measured central body size; overlaps with BMI.,numeric,4.282256563023646,910
+DirectHdlcholesterolMgdl,HDL,Direct HDL-Cholesterol (mg/dL),retain,Measured lipid fraction; distinct from total cholesterol.,numeric,8.41556507168125,104
+TotalCholesterolMgdl,TCHOL,Total Cholesterol (mg/dL),retain,Measured metabolic laboratory context.,numeric,8.41556507168125,247
+VigorousWorkActivity,PAQ,Vigorous work activity,retain,Work activity at vigorous intensity.,numeric,21.969838018990878,2
+ModerateWorkActivity,PAQ,Moderate work activity,retain,Work activity at moderate intensity.,numeric,21.969838018990878,2
+WalkOrBicycle,PAQ,Walk or bicycle,retain,Active transport summary.,numeric,21.8767454850121,2
+VigorousRecreationalActivities,PAQ,Vigorous recreational activities,retain,Recreational activity at vigorous intensity.,numeric,21.8767454850121,2
+ModerateRecreationalActivities,PAQ,Moderate recreational activities,retain,Recreational activity at moderate intensity.,numeric,21.8767454850121,2
+MinutesSedentaryActivity,PAQ,Minutes sedentary activity,retain,Sedentary duration after fixed nonresponse-code cleaning.,numeric,22.39806367529324,48
+Gender,DEMO,Gender,retain,Reported demographic category; encode without numeric ordering.,categorical,0.0,2
+AgeInYearsAtScreening,DEMO,Age in years at screening,retain,Age context; retain top-coded age as supplied.,numeric,0.0,73
+RacehispanicOrigin,DEMO,Race/Hispanic origin,retain,One supplied demographic encoding; descriptive association only.,categorical,0.0,5
+HowOftenAddSaltToFoodAtTable,DR1TOT,How often add salt to food at table,retain,Habitual salt-use category; not a sodium-intake measurement.,categorical,36.47365481288401,3
+DoctorToldYouHaveDiabetes,DIQ,Doctor told you have diabetes,retain,One prior metabolic-history summary; retain Borderline category.,categorical,0.05585552038726494,3
+Glycohemoglobin,GHB,Glycohemoglobin (%),retain,Measured glycemic context; distinct from self-reported diabetes.,numeric,14.671383355054923,90
+SmokedAtLeast100CigarettesInLife,SMQ,Smoked at least 100 cigarettes in life,retain,Lifetime tobacco-exposure summary; not current dose.,numeric,21.8767454850121,2

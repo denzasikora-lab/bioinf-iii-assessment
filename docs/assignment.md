@@ -1,21 +1,16 @@
 # BIOINF III Assessment
 
-**Этот репозиторий содержит информацию о вступительном испытании на программу «Биоинформатика для биологов: ступень III» (https://bioinf.me/education/bioinf_iii_step)**
+English translation of the supplied assessment instructions. Source: [BIOINF-III-assessment](https://github.com/bioinformaticsinstitute/BIOINF-III-assessment).
 
+This repository contains the entrance assessment for the [Bioinformatics for Biologists: Level III](https://bioinf.me/education/bioinf_iii_step) program.
 
+The assessment consists of two parts: an ML task and an NGS task. Both parts must be completed.
 
-**Вступительное испытание состоит из двух частей: задание по ML и задание по NGS. Необходимо выполнить обе части!**
+To complete the assessment:
 
+* Make sure that you received the automatic registration reply, which contains information needed for the NGS task.
+* Clone the repository and publish it as a new private repository in your own account.
+* Complete both tasks by following the instructions in their respective directories.
+* When finished, add `@bioinformaticsinstitute` as a collaborator so that the work can be reviewed.
 
-
-Для выполнения задания необходимо:
-
-* Убедиться, что вы получили автоответ на регистрацию (в нем содержится информация, необходимая для задания по NGS).
-* Клонировать репозиторий себе, после чего опубликовать как новый закрытый репозиторий в своем профиле.
-* Выполнить оба задания, следуя инструкциям в соответствующих директориях.
-* По окончании работы добавить @bioinformaticsinstitute в коллабораторы — после этого мы приступим к проверке.
-
-
-
-Удачи!
-
+Good luck!
