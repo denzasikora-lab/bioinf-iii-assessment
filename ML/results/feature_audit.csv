@@ -1,0 +1,195 @@
+feature,source,label,decision,reason
+SEQN,identifier,Participant identifier,identifier,Used only to verify participant independence.
+GeneralHealthCondition,HSQ,General health condition,retain,One broad self-reported health summary.
+EverBreastfedOrFedBreastmilk,DBQ,Ever breastfed or fed breastmilk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+AgeStoppedBreastfeedingdays,DBQ,Age stopped breastfeeding(days),exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+AgeFirstFedFormuladays,DBQ,Age first fed formula(days),exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+AgeStoppedReceivingFormuladays,DBQ,Age stopped receiving formula(days),exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+AgeStartedOtherFoodbeverage,DBQ,Age started other food/beverage,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+AgeFirstFedMilkdays,DBQ,Age first fed milk(days),exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+TypeOfMilkFirstFedWholeMilk,DBQ,Type of milk first fed - whole milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+TypeOfMilkFirstFed2Milk,DBQ,Type of milk first fed - 2% milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+TypeOfMilkFirstFed1Milk,DBQ,Type of milk first fed - 1% milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+TypeOfMilkFirstFedFatFreeMilk,DBQ,Type of milk first fed - fat free milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+TypeOfMilkFirstFedSoyMilk,DBQ,Type of milk first fed - soy milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+TypeOfMilkFirstFedOther,DBQ,Type of milk first fed - other,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+HowHealthyIsTheDiet,DBQ,How healthy is the diet,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+Past30DayMilkProductConsumption,DBQ,Past 30 day milk product consumption,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+YouDrinkWholeOrRegularMilk,DBQ,You drink whole or regular milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+YouDrink2FatMilk,DBQ,You drink 2% fat milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+YouDrink1FatMilk,DBQ,You drink 1% fat milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+YouDrinkFatFreeskimMilk,DBQ,You drink fat free/skim milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+YouDrinkSoyMilk,DBQ,You drink soy milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+YouDrinkAnotherTypeOfMilk,DBQ,You drink another type of milk,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+RegularMilkUse5TimesPerWeek,DBQ,Regular milk use 5 times per week,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+HowOftenDrankMilkAge512,DBQ,How often drank milk age 5-12,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+HowOftenDrankMilkAge1317,DBQ,How often drank milk age 13-17,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+HowOftenDrankMilkAge1835,DBQ,How often drank milk age 18-35,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+CommunitygovernmentMealsDelivered,DBQ,Community/Government meals delivered,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+EatMealsAtCommunityseniorCenter,DBQ,Eat meals at Community/Senior center,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+AttendKindergartenThruHighSchool,DBQ,Attend kindergarten thru high school,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+SchoolServesSchoolLunches,DBQ,School serves school lunches,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+OfTimesweekGetSchoolLunch,DBQ,# of times/week get school lunch,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+SchoolLunchFreeReducedOrFullPrice,DBQ,"School lunch free, reduced or full price",exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+SchoolServeCompleteBreakfastEachDay,DBQ,School serve complete breakfast each day,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+OfTimesweekGetSchoolBreakfast,DBQ,# of times/week get school breakfast,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+SchoolBreakfastFreereducedfullPrice,DBQ,School breakfast free/reduced/full price,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+SummerProgramMealFreereducedPrice,DBQ,Summer program meal free/reduced price,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+OfMealsNotHomePrepared,DBQ,# of meals not home prepared,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+OfMealsFromFastFoodOrPizzaPlace,DBQ,# of meals from fast food or pizza place,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+OfReadytoeatFoodsInPast30Days,DBQ,# of ready-to-eat foods in past 30 days,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+OfFrozenMealspizzaInPast30Days,DBQ,# of frozen meals/pizza in past 30 days,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+HeardOfMyPlate,DBQ,Heard of My Plate,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+LookedUpMyPlateOnInternet,DBQ,Looked up My Plate on internet,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+TriedMyPlatePlan,DBQ,Tried My Plate plan,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+MainMealPlannerpreparer,DBQ,Main meal planner/preparer,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+SharedMealPlanningpreparingDuty,DBQ,Shared meal planning/preparing duty,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+MainFoodShopper,DBQ,Main food shopper,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+SharedFoodShoppingDuty,DBQ,Shared food shopping duty,exclude,"Detailed diet, childhood feeding, meal access, or food roles outside the compact protocol."
+HaveSeriousDifficultyHearing,DLQ,Have serious difficulty hearing?,exclude,"Disability, anxiety, and depression questionnaire outside the compact protocol."
+HaveSeriousDifficultySeeing,DLQ,Have serious difficulty seeing?,exclude,"Disability, anxiety, and depression questionnaire outside the compact protocol."
+HaveSeriousDifficultyConcentrating,DLQ,Have serious difficulty concentrating?,exclude,"Disability, anxiety, and depression questionnaire outside the compact protocol."
+HaveSeriousDifficultyWalking,DLQ,Have serious difficulty walking?,exclude,"Disability, anxiety, and depression questionnaire outside the compact protocol."
+HaveDifficultyDressingOrBathing,DLQ,Have difficulty dressing or bathing?,exclude,"Disability, anxiety, and depression questionnaire outside the compact protocol."
+HaveDifficultyDoingErrandsAlone,DLQ,Have difficulty doing errands alone?,exclude,"Disability, anxiety, and depression questionnaire outside the compact protocol."
+HowOftenDoYouFeelWorriedOrAnxious,DLQ,How often do you feel worried or anxious,exclude,"Disability, anxiety, and depression questionnaire outside the compact protocol."
+TakeMedicationForTheseFeelings,DLQ,Take medication for these feelings?,exclude,"Disability, anxiety, and depression questionnaire outside the compact protocol."
+HowOftenDoYouFeelDepressed,DLQ,How often do you feel depressed?,exclude,"Disability, anxiety, and depression questionnaire outside the compact protocol."
+TakeMedicationForDepression,DLQ,Take medication for depression?,exclude,"Disability, anxiety, and depression questionnaire outside the compact protocol."
+CoveredByHealthInsurance,HIQ,Covered by health insurance,exclude,Insurance/access information outside the compact measurement protocol.
+UsualSleepTimeOnWeekdaysOrWorkdays,SLQ,Usual sleep time on weekdays or workdays,exclude,Additional sleep symptoms or clock times; retain only supplied sleep duration.
+UsualWakeTimeOnWeekdaysOrWorkdays,SLQ,Usual wake time on weekdays or workdays,exclude,Additional sleep symptoms or clock times; retain only supplied sleep duration.
+SleepHoursWeekdaysOrWorkdays,SLQ,Sleep hours - weekdays or workdays,retain,Habitual sleep duration; avoid clock-time parsing.
+HowOftenDoYouSnore,SLQ,How often do you snore?,exclude,Additional sleep symptoms or clock times; retain only supplied sleep duration.
+EverToldDoctorHadTroubleSleeping,SLQ,Ever told doctor had trouble sleeping?,exclude,Additional sleep symptoms or clock times; retain only supplied sleep duration.
+HowOftenFeelOverlySleepyDuringDay,SLQ,How often feel overly sleepy during day?,exclude,Additional sleep symptoms or clock times; retain only supplied sleep duration.
+HaveLittleInterestInDoingThings,DPQ,Have little interest in doing things,exclude,Multi-item depression questionnaire outside the compact protocol.
+FeelingDownDepressedOrHopeless,DPQ,"Feeling down, depressed, or hopeless",exclude,Multi-item depression questionnaire outside the compact protocol.
+TroubleSleepingOrSleepingTooMuch,DPQ,Trouble sleeping or sleeping too much,exclude,Multi-item depression questionnaire outside the compact protocol.
+FeelingTiredOrHavingLittleEnergy,DPQ,Feeling tired or having little energy,exclude,Multi-item depression questionnaire outside the compact protocol.
+PoorAppetiteOrOvereating,DPQ,Poor appetite or overeating,exclude,Multi-item depression questionnaire outside the compact protocol.
+FeelingBadAboutYourself,DPQ,Feeling bad about yourself,exclude,Multi-item depression questionnaire outside the compact protocol.
+TroubleConcentratingOnThings,DPQ,Trouble concentrating on things,exclude,Multi-item depression questionnaire outside the compact protocol.
+MovingOrSpeakingSlowlyOrTooFast,DPQ,Moving or speaking slowly or too fast,exclude,Multi-item depression questionnaire outside the compact protocol.
+ThoughtYouWouldBeBetterOffDead,DPQ,Thought you would be better off dead,exclude,Multi-item depression questionnaire outside the compact protocol.
+DifficultyTheseProblemsHaveCaused,DPQ,Difficulty these problems have caused,exclude,Multi-item depression questionnaire outside the compact protocol.
+SmokedTobaccoLast5Days,SMQRTU,Smoked tobacco last 5 days?,exclude,Conditional recent tobacco-use detail; retain one lifetime summary.
+DaysSmokedCigarettesLast5Days,SMQRTU,# days smoked cigarettes last 5 days,exclude,Conditional recent tobacco-use detail; retain one lifetime summary.
+CigarettesSmokedPerDay,SMQRTU,# cigarettes smoked per day,exclude,Conditional recent tobacco-use detail; retain one lifetime summary.
+UsedAnyTobaccoProductLast5Days,SMQRTU,Used any tobacco product last 5 days?,exclude,Conditional recent tobacco-use detail; retain one lifetime summary.
+ExperienceConfusionmemoryProblems,PFQ,Experience confusion/memory problems,exclude,Conditional functional-limitation questionnaire outside the compact protocol.
+PhysicalMentalEmotionalLimitations,PFQ,"Physical, mental, emotional limitations",exclude,Conditional functional-limitation questionnaire outside the compact protocol.
+DifficultyManagingMoney,PFQ,Difficulty managing money,exclude,Conditional functional-limitation questionnaire outside the compact protocol.
+60SecHr30SecHr2,BPX,60 sec HR (30 sec HR * 2),exclude,Unavailable blood-pressure examination; excludes diastolic pressure and pulse fields.
+60SecPulse30SecPulse2,BPX,60 sec. pulse (30 sec. pulse * 2),exclude,Unavailable blood-pressure examination; excludes diastolic pressure and pulse fields.
+SystolicBloodPressureMmHg,BPX,"Systolic blood pressure, mm Hg",target,Regression outcome; never an input.
+DiastolicBloodPressureMmHg,BPX,"Diastolic blood pressure, mm Hg",exclude,Unavailable blood-pressure examination; excludes diastolic pressure and pulse fields.
+EnergyKcal_DR2TOT,DR2TOT,Energy (kcal),exclude,Second dietary recall outside the screening-visit scenario.
+ProteinGm_DR2TOT,DR2TOT,Protein (gm),exclude,Second dietary recall outside the screening-visit scenario.
+CarbohydrateGm_DR2TOT,DR2TOT,Carbohydrate (gm),exclude,Second dietary recall outside the screening-visit scenario.
+TotalSugarsGm_DR2TOT,DR2TOT,Total sugars (gm),exclude,Second dietary recall outside the screening-visit scenario.
+DietaryFiberGm_DR2TOT,DR2TOT,Dietary fiber (gm),exclude,Second dietary recall outside the screening-visit scenario.
+TotalFatGm_DR2TOT,DR2TOT,Total fat (gm),exclude,Second dietary recall outside the screening-visit scenario.
+TotalSaturatedFattyAcidsGm_DR2TOT,DR2TOT,Total saturated fatty acids (gm),exclude,Second dietary recall outside the screening-visit scenario.
+TotalMonounsaturatedFattyAcidsGm_DR2TOT,DR2TOT,Total monounsaturated fatty acids (gm),exclude,Second dietary recall outside the screening-visit scenario.
+TotalPolyunsaturatedFattyAcidsGm_DR2TOT,DR2TOT,Total polyunsaturated fatty acids (gm),exclude,Second dietary recall outside the screening-visit scenario.
+CholesterolMg_DR2TOT,DR2TOT,Cholesterol (mg),exclude,Second dietary recall outside the screening-visit scenario.
+AlcoholGm_DR2TOT,DR2TOT,Alcohol (gm),exclude,Second dietary recall outside the screening-visit scenario.
+WeightKg,BMX,Weight (kg),retain,Absolute measured body size; regularize overlap with BMI.
+RecumbentLengthCm,BMX,Recumbent Length (cm),exclude,Infant recumbent length is outside the standing anthropometry protocol.
+StandingHeightCm,BMX,Standing Height (cm),retain,Measured stature; distinct from age and body mass.
+BodyMassIndexKgm2,BMX,Body Mass Index (kg/m**2),retain,Measured size relative to height; correlated with weight and height.
+WaistCircumferenceCm,BMX,Waist Circumference (cm),retain,Measured central body size; overlaps with BMI.
+DirectHdlcholesterolMgdl,HDL,Direct HDL-Cholesterol (mg/dL),retain,Measured lipid fraction; distinct from total cholesterol.
+TotalCholesterolMgdl,TCHOL,Total Cholesterol (mg/dL),retain,Measured metabolic laboratory context.
+VigorousWorkActivity,PAQ,Vigorous work activity,retain,Work activity at vigorous intensity.
+ModerateWorkActivity,PAQ,Moderate work activity,retain,Work activity at moderate intensity.
+WalkOrBicycle,PAQ,Walk or bicycle,retain,Active transport summary.
+VigorousRecreationalActivities,PAQ,Vigorous recreational activities,retain,Recreational activity at vigorous intensity.
+ModerateRecreationalActivities,PAQ,Moderate recreational activities,retain,Recreational activity at moderate intensity.
+MinutesSedentaryActivity,PAQ,Minutes sedentary activity,retain,Sedentary duration after fixed nonresponse-code cleaning.
+EverBeenToldYouHaveAsthma,MCQ,Ever been told you have asthma,exclude,Disease-specific diagnoses and conditional ages outside the broad summary protocol.
+DoctorEverSaidYouHadArthritis,MCQ,Doctor ever said you had arthritis,exclude,Disease-specific diagnoses and conditional ages outside the broad summary protocol.
+EverToldYouHadHeartAttack,MCQ,Ever told you had heart attack,exclude,Disease-specific diagnoses and conditional ages outside the broad summary protocol.
+AgeWhenToldYouHadHeartAttack,MCQ,Age when told you had heart attack,exclude,Disease-specific diagnoses and conditional ages outside the broad summary protocol.
+EverToldYouHadAStroke,MCQ,Ever told you had a stroke,exclude,Disease-specific diagnoses and conditional ages outside the broad summary protocol.
+AgeWhenToldYouHadAStroke,MCQ,Age when told you had a stroke,exclude,Disease-specific diagnoses and conditional ages outside the broad summary protocol.
+EverToldYouHadCancerOrMalignancy,MCQ,Ever told you had cancer or malignancy,exclude,Disease-specific diagnoses and conditional ages outside the broad summary protocol.
+1StCancerWhatKindWasIt,MCQ,1st cancer - what kind was it?,exclude,Disease-specific diagnoses and conditional ages outside the broad summary protocol.
+Age1StCancerMcq230ADiagnosed,MCQ,Age 1st cancer (MCQ230a) diagnosed,exclude,Disease-specific diagnoses and conditional ages outside the broad summary protocol.
+EverUsedMarijuanaOrHashish,DUQ,Ever used marijuana or hashish,exclude,Substance-specific and conditional histories outside the compact protocol.
+DaysUsedMarijuanaOrHashishmonth,DUQ,# days used marijuana or hashish/month,exclude,Substance-specific and conditional histories outside the compact protocol.
+EverUsedCocaineheroinmethamphetamine,DUQ,Ever used cocaine/heroin/methamphetamine,exclude,Substance-specific and conditional histories outside the compact protocol.
+EverUseAnyFormOfCocaine,DUQ,Ever use any form of cocaine,exclude,Substance-specific and conditional histories outside the compact protocol.
+OfDaysUsedCocainemonth,DUQ,# of days used cocaine/month,exclude,Substance-specific and conditional histories outside the compact protocol.
+EverUsedHeroin,DUQ,Ever used heroin,exclude,Substance-specific and conditional histories outside the compact protocol.
+OfDaysUsedHeroinmonth,DUQ,# of days used heroin/month,exclude,Substance-specific and conditional histories outside the compact protocol.
+EverUsedMethamphetamine,DUQ,Ever used methamphetamine,exclude,Substance-specific and conditional histories outside the compact protocol.
+DaysUsedMethamphetaminemonth,DUQ,# days used methamphetamine/month,exclude,Substance-specific and conditional histories outside the compact protocol.
+EverBeenInRehabilitationProgram,DUQ,Ever been in rehabilitation program,exclude,Substance-specific and conditional histories outside the compact protocol.
+BloodLeadUgdl,PBCD,Blood lead (ug/dL),exclude,Specialized trace-element laboratory panel outside the three-test metabolic protocol.
+BloodCadmiumUgl,PBCD,Blood cadmium (ug/L),exclude,Specialized trace-element laboratory panel outside the three-test metabolic protocol.
+BloodMercuryTotalUgl,PBCD,"Blood mercury, total (ug/L)",exclude,Specialized trace-element laboratory panel outside the three-test metabolic protocol.
+BloodSeleniumUgl,PBCD,Blood selenium (ug/L),exclude,Specialized trace-element laboratory panel outside the three-test metabolic protocol.
+BloodManganeseUgl,PBCD,Blood manganese (ug/L),exclude,Specialized trace-element laboratory panel outside the three-test metabolic protocol.
+Gender,DEMO,Gender,retain,Reported demographic category; encode without numeric ordering.
+AgeInYearsAtScreening,DEMO,Age in years at screening,retain,Age context; retain top-coded age as supplied.
+AgeInMonthsAtScreening0To24Mos,DEMO,Age in months at screening - 0 to 24 mos,exclude,Infant-specific age detail outside the years-based protocol.
+RacehispanicOrigin,DEMO,Race/Hispanic origin,retain,One supplied demographic encoding; descriptive association only.
+RacehispanicOriginWNhAsian,DEMO,Race/Hispanic origin w/ NH Asian,exclude,Alternative encoding of the same demographic concept; use one encoding.
+ServedActiveDutyInUsArmedForces,DEMO,Served active duty in US Armed Forces,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+EducationLevelChildrenyouth619,DEMO,Education level - Children/Youth 6-19,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+EducationLevelAdults20,DEMO,Education level - Adults 20+,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+MaritalStatus,DEMO,Marital status,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+TotalNumberOfPeopleInTheHousehold,DEMO,Total number of people in the Household,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+TotalNumberOfPeopleInTheFamily,DEMO,Total number of people in the Family,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+OfChildren5YearsOrYoungerInHh,DEMO,# of children 5 years or younger in HH,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+OfChildren617YearsOldInHh,DEMO,# of children 6-17 years old in HH,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+OfAdults60YearsOrOlderInHh,DEMO,# of adults 60 years or older in HH,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+AnnualHouseholdIncome,DEMO,Annual household income,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+AnnualFamilyIncome,DEMO,Annual family income,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+RatioOfFamilyIncomeToPoverty,DEMO,Ratio of family income to poverty,exclude,Additional socioeconomic/household or age-specific fields outside the three-field protocol.
+TrunkFatG,DXX,Trunk Fat (g),exclude,Specialized DXA scan outside the available anthropometry protocol.
+TrunkPercentFat,DXX,Trunk Percent Fat,exclude,Specialized DXA scan outside the available anthropometry protocol.
+TotalPercentFat,DXX,Total Percent Fat,exclude,Specialized DXA scan outside the available anthropometry protocol.
+HowOftenAddSaltToFoodAtTable,DR1TOT,How often add salt to food at table,retain,Habitual salt-use category; not a sodium-intake measurement.
+OnSpecialDiet,DR1TOT,On special diet?,exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+WeightLosslowCalorieDiet,DR1TOT,Weight loss/Low calorie diet,exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+LowFatlowCholesterolDiet,DR1TOT,Low fat/Low cholesterol diet,exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+LowSaltlowSodiumDiet,DR1TOT,Low salt/Low sodium diet,exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+DiabeticDiet,DR1TOT,Diabetic diet,exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+LowCarbohydrateDiet,DR1TOT,Low carbohydrate diet,exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+EnergyKcal_DR1TOT,DR1TOT,Energy (kcal),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+ProteinGm_DR1TOT,DR1TOT,Protein (gm),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+CarbohydrateGm_DR1TOT,DR1TOT,Carbohydrate (gm),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+TotalSugarsGm_DR1TOT,DR1TOT,Total sugars (gm),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+DietaryFiberGm_DR1TOT,DR1TOT,Dietary fiber (gm),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+TotalFatGm_DR1TOT,DR1TOT,Total fat (gm),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+TotalSaturatedFattyAcidsGm_DR1TOT,DR1TOT,Total saturated fatty acids (gm),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+TotalMonounsaturatedFattyAcidsGm_DR1TOT,DR1TOT,Total monounsaturated fatty acids (gm),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+TotalPolyunsaturatedFattyAcidsGm_DR1TOT,DR1TOT,Total polyunsaturated fatty acids (gm),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+CholesterolMg_DR1TOT,DR1TOT,Cholesterol (mg),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+AlcoholGm_DR1TOT,DR1TOT,Alcohol (gm),exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+TunaEatenDuringPast30Days,DR1TOT,Tuna eaten during past 30 days,exclude,Detailed dietary recall or conditional diets; retain only habitual salt-use frequency.
+DoctorToldYouHaveDiabetes,DIQ,Doctor told you have diabetes,retain,One prior metabolic-history summary; retain Borderline category.
+AgeWhenFirstToldYouHadDiabetes,DIQ,Age when first told you had diabetes,exclude,Additional diabetes-risk/treatment or conditional-history fields; retain one diagnosis summary.
+EverToldYouHavePrediabetes,DIQ,Ever told you have prediabetes,exclude,Additional diabetes-risk/treatment or conditional-history fields; retain one diagnosis summary.
+EverToldHaveHealthRiskForDiabetes,DIQ,Ever told have health risk for diabetes,exclude,Additional diabetes-risk/treatment or conditional-history fields; retain one diagnosis summary.
+FamilyHistory,DIQ,Family history,exclude,Additional diabetes-risk/treatment or conditional-history fields; retain one diagnosis summary.
+TakingInsulinNow,DIQ,Taking insulin now,exclude,Additional diabetes-risk/treatment or conditional-history fields; retain one diagnosis summary.
+TakeDiabeticPillsToLowerBloodSugar,DIQ,Take diabetic pills to lower blood sugar,exclude,Additional diabetes-risk/treatment or conditional-history fields; retain one diagnosis summary.
+WhatWasYourLastA1CLevel,DIQ,What was your last A1C level,exclude,Additional diabetes-risk/treatment or conditional-history fields; retain one diagnosis summary.
+Glycohemoglobin,GHB,Glycohemoglobin (%),retain,Measured glycemic context; distinct from self-reported diabetes.
+SmokedAtLeast100CigarettesInLife,SMQ,Smoked at least 100 cigarettes in life,retain,Lifetime tobacco-exposure summary; not current dose.
+AgeStartedSmokingCigarettesRegularly,SMQ,Age started smoking cigarettes regularly,exclude,"Conditional smoking dose, timing, or cessation detail; retain one lifetime summary."
+DoYouNowSmokeCigarettes,SMQ,Do you now smoke cigarettes?,exclude,"Conditional smoking dose, timing, or cessation detail; retain one lifetime summary."
+DaysSmokedCigsDuringPast30Days,SMQ,# days smoked cigs during past 30 days,exclude,"Conditional smoking dose, timing, or cessation detail; retain one lifetime summary."
+AvgCigarettesdayDuringPast30Days,SMQ,Avg # cigarettes/day during past 30 days,exclude,"Conditional smoking dose, timing, or cessation detail; retain one lifetime summary."
+TriedToQuitSmoking,SMQ,Tried to quit smoking,exclude,"Conditional smoking dose, timing, or cessation detail; retain one lifetime summary."
+TimesStoppedSmokingCigarettes,SMQ,# times stopped smoking cigarettes,exclude,"Conditional smoking dose, timing, or cessation detail; retain one lifetime summary."
+HowLongWereYouAbleToStopSmoking,SMQ,How long were you able to stop smoking,exclude,"Conditional smoking dose, timing, or cessation detail; retain one lifetime summary."
+UnitOfMeasureDayweekmonthyear_2_SMQ,SMQ,Unit of measure (day/week/month/year),exclude,"Conditional smoking dose, timing, or cessation detail; retain one lifetime summary."
+CurrentSelfreportedHeightInches,WHQ,Current self-reported height (inches),exclude,Self-reported anthropometry or weight-change history; use measured anthropometry.
+CurrentSelfreportedWeightPounds,WHQ,Current self-reported weight (pounds),exclude,Self-reported anthropometry or weight-change history; use measured anthropometry.
+TriedToLoseWeightInPastYear,WHQ,Tried to lose weight in past year,exclude,Self-reported anthropometry or weight-change history; use measured anthropometry.
+TimesLost10LbsOrMoreToLoseWeight,WHQ,Times lost 10 lbs or more to lose weight,exclude,Self-reported anthropometry or weight-change history; use measured anthropometry.

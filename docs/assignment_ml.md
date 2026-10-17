@@ -1,15 +1,17 @@
 # BIOINF III Assessment (ML)
 
-**Работа выполняется строго в Jupiter Notebook и прикладывается в репозиторий**
+English translation of the supplied assessment instructions.
 
-В этом задании вам предстоит построить пайплайн решения задачи регрессии на датасете NHANES. 
-Целевая переменная — `SystolicBloodPressureMmHg`
-* Ознакомьтесь с датасетом в файле `data/nhanes.csv` и информацией о признаках в файле `data/nhanes_metadata.csv`.
-* Проведите EDA, выделяя основные этапы и объясняя их значение для данного анализа.
-* Выберете алгоритм машинного обучения для решения задачи регрессии, аргументируйте свой выбор для решения данной задачи. 
-* Опишите, как обучается и как работает выбранная вами модель.
-* Обучите модель и дополните отчет оценкой качества полученного решения.
+The work must be completed in a Jupyter Notebook and included in the repository.
 
-Работа должна быть воспроизводимой: ноутбук должен запускаться последовательно от начала до конца.
+Build a pipeline for a regression task using the NHANES dataset. The target variable is `SystolicBloodPressureMmHg`.
 
-Не старайтесь улучшить метрики, если уверены, что уже провели качественный анализ. Качество предсказаний модели будет оцениваться в меньшей степени, чем ход ваших рассуждений и уровень понимания выполненных действий.
+* Review the dataset in `data/nhanes.csv` and the feature information in `data/nhanes_metadata.csv`.
+* Perform EDA, distinguishing the main stages and explaining their relevance to the analysis.
+* Choose a machine-learning algorithm for regression and justify its suitability for this task.
+* Describe how the chosen model is trained and how it makes predictions.
+* Train the model and supplement the report with an evaluation of the resulting solution.
+
+The work must be reproducible: the notebook must run sequentially from beginning to end.
+
+Do not try to improve metrics if you are confident that you have already performed a sound analysis. Prediction quality will receive less emphasis than your reasoning and understanding of the steps you performed.

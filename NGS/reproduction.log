@@ -1,0 +1,26 @@
++ date -u '+%Y-%m-%d UTC'
+2026-10-14 UTC
++ python3 --version
+Python 3.14.3
++ file NGS/input/A114.fasta.gz
+NGS/input/A114.fasta.gz: gzip compressed data, was "A114.fasta", last modified: Thu Aug  6 08:35:12 2026, from Unix, original size modulo 2^32 236
++ gzip -t NGS/input/A114.fasta.gz
++ shasum -a 256 NGS/input/A114.fasta.gz NGS/reference/P68871.fasta
+1daa852d387c52ca6c7702821635c1048850050e0352c27501f74fd49c634682  NGS/input/A114.fasta.gz
+a976e8ef07b298781398d4a66d52ddf13b796e991baa7e4e499732ecc6689107  NGS/reference/P68871.fasta
++ gzip -cd NGS/input/A114.fasta.gz
+>sp|P68871|HBB_HUMAN Hemoglobin subunit beta OS=Homo sapiens OX=9606 GN=HBB PE=1 SV=2
+MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPK
+VKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFG
+KEFTPPVQAAYQKVVAGVANALAHKYH
++ python3 NGS/verify_sequence.py
+Input: A114.fasta.gz
+Archive SHA-256: 1daa852d387c52ca6c7702821635c1048850050e0352c27501f74fd49c634682
+Header: >sp|P68871|HBB_HUMAN Hemoglobin subunit beta OS=Homo sapiens OX=9606 GN=HBB PE=1 SV=2
+Length: 147 aa
+Reference: P68871.fasta
+Reference SHA-256: a976e8ef07b298781398d4a66d52ddf13b796e991baa7e4e499732ecc6689107
+Exact positional matches: 147 / 147
+Identity: 100.0%; length coverage: 100.0%; substitutions: 0; gaps: 0
+Sequence SHA-256: 9ebf320eb707d71644444fe5006ed58af56a0bf0ec9568eb6a3a65e0e8191465
+Result: exact match to the saved UniProt P68871 canonical sequence
