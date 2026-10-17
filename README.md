@@ -1,6 +1,6 @@
 # BIOINF III: ML and NGS assessment solutions
 
-Author: **Egor Fedosov**. [Stepik profile](https://stepik.org/users/1370242994/profile). Original analysis: 5 September 2026. English revision and reproduction: 14 October 2026.
+Author: **Egor Fedosov**. Original analysis: 5 September 2026. English revision and reproduction: 14 October 2026.
 
 This repository contains a reproducible regression notebook and an English laboratory notebook for protein-sequence identification. The revision makes feature selection auditable, strengthens model comparison, quantifies errors across target ranges, splits the notebook into focused cells, and pairs NGS commands with their actual outputs.
 
